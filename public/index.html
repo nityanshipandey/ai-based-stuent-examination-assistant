@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExamBuddy – AI Student Examination Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Exam<span>Buddy</span></h1>
+  <p>Your AI study partner: ask doubts, practice, plan and get feedback.</p>
+</header>
+<main>
+  <nav id="tabs">
+    <button data-t="doubt" class="on">Ask a Doubt</button>
+    <button data-t="quiz">Practice Quiz</button>
+    <button data-t="plan">Study Plan</button>
+    <button data-t="eval">Check My Answer</button>
+  </nav>
+
+  <section id="doubt" class="card">
+    <label>Subject / topic</label><input id="d-sub" placeholder="e.g. Physics – Newton's laws">
+    <label>Your question</label><textarea id="d-q" placeholder="Type your doubt here..."></textarea>
+    <button class="go" id="d-go">Explain it</button>
+    <div class="out" id="d-out"></div>
+  </section>
+
+  <section id="quiz" class="card hide">
+    <div class="row">
+      <div><label>Topic</label><input id="q-topic" placeholder="e.g. Photosynthesis"></div>
+      <div><label>Level</label><select id="q-lvl"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></div>
+      <div><label>Questions</label><select id="q-n"><option>5</option><option>10</option></select></div>
+    </div>
+    <button class="go" id="q-go">Generate Quiz</button>
+    <div id="q-out"></div>
+  </section>
+
+  <section id="plan" class="card hide">
+    <label>Subjects (comma separated)</label><input id="p-sub" placeholder="Maths, Physics, Chemistry">
+    <div class="row">
+      <div><label>Days left for exam</label><input id="p-days" type="number" min="1" value="14"></div>
+      <div><label>Study hours per day</label><input id="p-hrs" type="number" min="1" max="16" value="4"></div>
+    </div>
+    <label>Weak areas (optional)</label><input id="p-weak" placeholder="e.g. Integration, Organic Chemistry">
+    <button class="go" id="p-go">Make My Plan</button>
+    <div class="out" id="p-out"></div>
+  </section>
+
+  <section id="eval" class="card hide">
+    <label>Question</label><textarea id="e-q" style="min-height:70px" placeholder="Paste the exam question"></textarea>
+    <label>Your answer</label><textarea id="e-a" placeholder="Write your answer here..."></textarea>
+    <button class="go" id="e-go">Evaluate</button>
+    <div class="out" id="e-out"></div>
+  </section>
+
+  <p class="note">AI can make mistakes. Always verify important facts with your textbook or teacher.</p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
